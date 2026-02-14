@@ -63,15 +63,34 @@ function getCardImage(card) {
   return card.officialImage || card.image || "assets/card-art/placeholder.svg";
 }
 
-function getIssuerLogo(card) {
-  if (!card.issuerDomain) return "";
+function getLogoUrl(domain) {
+  if (!domain) return "";
   const params = new URLSearchParams({
     format: "png",
     size: "64",
     fallback: "monogram",
   });
   if (state.logoDevToken) params.set("token", state.logoDevToken);
-  return `https://img.logo.dev/${card.issuerDomain}?${params.toString()}`;
+  return `https://img.logo.dev/${domain}?${params.toString()}`;
+}
+
+function getCardLogos(card) {
+  const domains = Array.isArray(card.logoDomains)
+    ? card.logoDomains
+    : [card.issuerDomain].filter(Boolean);
+  return [...new Set(domains)].map((domain) => ({
+    domain,
+    url: getLogoUrl(domain),
+  }));
+}
+
+function renderCardLogos(card) {
+  return getCardLogos(card)
+    .map(
+      (logo) =>
+        `<img class="issuer-logo" src="${logo.url}" alt="${logo.domain} logo" loading="lazy" onerror="this.onerror=null;this.style.display='none';" />`
+    )
+    .join("");
 }
 
 function getFilteredCards() {
@@ -130,11 +149,7 @@ function renderCards() {
           onerror="this.onerror=null;this.src='assets/card-art/placeholder.svg';"
         />
         <div class="issuer-row">
-          ${
-            getIssuerLogo(card)
-              ? `<img class="issuer-logo" src="${getIssuerLogo(card)}" alt="${card.issuer} logo" loading="lazy" onerror="this.onerror=null;this.style.display='none';" />`
-              : ""
-          }
+          ${renderCardLogos(card)}
           <p class="muted">${card.issuer}</p>
         </div>
         <h3>${card.name}</h3>
@@ -194,11 +209,7 @@ function openCardModal(cardId) {
       />
       <div class="card-modal-title-block">
         <div class="issuer-row">
-          ${
-            getIssuerLogo(card)
-              ? `<img class="issuer-logo" src="${getIssuerLogo(card)}" alt="${card.issuer} logo" loading="lazy" onerror="this.onerror=null;this.style.display='none';" />`
-              : ""
-          }
+          ${renderCardLogos(card)}
           <p class="muted">${card.issuer}</p>
         </div>
         <h3>${card.name}</h3>

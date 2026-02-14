@@ -48,6 +48,7 @@ Each card object uses:
 - `eligibility` (string)
 - `image` (string path to image/SVG)
 - `officialImage` (optional external issuer-provided image URL)
+- `logoDomains` (optional array for multi-brand cards, e.g. `["hdfcbank.com","tataneu.com"]`)
 - `issuerDomain` (domain used by logo.dev, e.g. `hdfcbank.com`)
 - `imageAlt` (string)
 - `applyUrl` (string URL; can be affiliate link later)
@@ -67,6 +68,11 @@ Issuer logos are rendered using:
 ```text
 https://img.logo.dev/<issuerDomain>?size=64&format=png&fallback=monogram
 ```
+
+For co-branded cards:
+
+- Use `logoDomains` to render multiple logos.
+- If `logoDomains` is absent, app falls back to `issuerDomain`.
 
 Optional: add top-level `logoDevToken` in `data/cards.json` if you have a token:
 

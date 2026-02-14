@@ -3,91 +3,94 @@
   "cards": [
     {
       "id": "idfc-wow",
-      "name": "FIRST WOW! Credit Card",
+      "name": "FIRST WOW!",
       "issuer": "IDFC FIRST Bank",
-      "cardCategory": "secured",
-      "partner": "Visa",
+      "cardCategory": "core card",
+      "partner": "Visa w/ Rupay (Digital)",
       "joiningFee": 0,
       "annualFee": 0,
-      "minFd": 10000,
-      "limitPolicy": "Typically up to 100% of FD value",
-      "rewardType": "cashback",
-      "rewards": "Reward points on eligible spends",
+      "minFd": 20000,
+      "limitPolicy": "Up to 100% of FD value",
+      "rewardType": "points",
+      "rewards": "1 RP per ₹200 (0.5% earn rate)",
       "forexMarkup": "0%",
       "loungeAccess": "No",
       "eligibility": "Resident Indian, FD with bank",
       "image": "assets/card-art/idfc-wow.svg",
       "imageAlt": "IDFC FIRST WOW card visual",
       "applyUrl": "https://www.idfcfirstbank.com/credit-card/wow",
-      "notes": "No annual fee FD-backed card",
+      "notes": "Enable UPI @ ₹199+GST/ year",
       "officialImage": "https://www.idfcfirst.bank.in/content/dam/idfcfirstbank/images/wow-rewamp/WOW-CREDIT-CARD-31-10-25.png",
-      "issuerDomain": "idfcfirstbank.com"
+      "issuerDomain": "idfcfirst.bank.in"
     },
     {
       "id": "sbi-unnati",
       "name": "SBI Card Unnati",
       "issuer": "SBI Card",
-      "cardCategory": "secured",
-      "partner": "Visa",
-      "joiningFee": 499,
+      "cardCategory": "core card",
+      "partner": "Visa or Mastercard",
+      "joiningFee": 0,
       "annualFee": 499,
       "minFd": 25000,
-      "limitPolicy": "Linked to FD amount with partner bank",
+      "limitPolicy": "Up to 80% of FD value",
       "rewardType": "points",
-      "rewards": "Reward points on eligible categories",
+      "rewards": "1 RP per ₹100 (1% earn rate)",
       "forexMarkup": "3.5%",
       "loungeAccess": "No",
-      "eligibility": "FD-backed route available for new-to-credit users",
+      "eligibility": "FD lien with State Bank of India",
       "image": "assets/card-art/sbi-unnati.svg",
       "imageAlt": "SBI Card Unnati visual",
       "applyUrl": "https://www.sbicard.com/",
-      "notes": "Fee waivers may apply based on annual spend",
+      "notes": "Fee waivers for first 4 years",
       "officialImage": "https://piceapp.com/blogs/wp-content/uploads/2025/11/SBI-Card-Unnati-1024x682.jpg",
       "issuerDomain": "sbicard.com"
     },
     {
-      "id": "icici-coral-secured",
-      "name": "Coral Credit Card (Against FD)",
-      "issuer": "ICICI Bank",
-      "cardCategory": "secured",
-      "partner": "Visa",
-      "joiningFee": 500,
-      "annualFee": 500,
-      "minFd": 50000,
-      "limitPolicy": "Usually 80% to 90% of FD value",
-      "rewardType": "mixed",
-      "rewards": "Reward points and partner offers",
+      "id": "suryoday-rupay-secured",
+      "name": "Suryoday SFB Rupay",
+      "issuer": "Suryoday SFB",
+      "cardCategory": "core card",
+      "partner": "Rupay",
+      "joiningFee": 0,
+      "annualFee": 150,
+      "minFd": 1000,
+      "limitPolicy": "Up to 90% of FD Value",
+      "rewardType": "cashback",
+      "rewards": "0.5% CB on spends",
       "forexMarkup": "3.5%",
-      "loungeAccess": "Domestic lounge benefits on eligible variants",
+      "loungeAccess": "Domestic: Up to 8 (2/Qtr)",
       "eligibility": "Existing or new customer with FD",
       "image": "assets/card-art/icici-coral.svg",
       "imageAlt": "ICICI Coral secured card visual",
       "applyUrl": "https://www.icicibank.com/personal-banking/cards/credit-card",
-      "notes": "Terms vary by branch and approved variant",
-      "officialImage": "https://www.icici.bank.in/content/dam/icicibank/india/managed-assets/revamp-page-images/cards/credit-card/cclandingpage.webp",
-      "issuerDomain": "icici.bank.in"
+      "notes": "Rupay Select requires ₹1,15,000 FD",
+      "officialImage": "https://pbs.twimg.com/media/G20ckuyWAAAokPo.jpg",
+      "issuerDomain": "suryoday.bank.in"
     },
     {
-      "id": "kotak-fd-card",
-      "name": "Kotak Credit Card Against FD",
-      "issuer": "Kotak Mahindra Bank",
-      "cardCategory": "secured",
-      "partner": "Visa",
+      "id": "suryoday-stablemoney-secured",
+      "name": "Stable Money Suryoday Bank",
+      "issuer": "Suryoday SFB",
+      "cardCategory": "co-branded",
+      "partner": "Rupay",
       "joiningFee": 0,
-      "annualFee": 0,
-      "minFd": 15000,
-      "limitPolicy": "Typically 80% to 90% of FD value",
-      "rewardType": "points",
-      "rewards": "Points and merchant offers based on card variant",
+      "annualFee": 150,
+      "minFd": 20000,
+      "limitPolicy": "Up to 90% of FD Value",
+      "rewardType": "cashback",
+      "rewards": "0.5% CB on spends",
       "forexMarkup": "3.5%",
-      "loungeAccess": "Variant-specific",
+      "loungeAccess": "Domestic: 8/year; Int.: 2/year",
       "eligibility": "FD with bank and KYC",
       "image": "assets/card-art/kotak-fd.svg",
       "imageAlt": "Kotak FD-backed card visual",
       "applyUrl": "https://www.kotak.com/en/personal-banking/cards/credit-cards.html",
-      "notes": "Card variant and fee may differ by offer",
-      "officialImage": "https://www.kotak.bank.in/content/dam/Kotak/herosliderbanner/cc-homepage-prod-d.jpg",
-      "issuerDomain": "kotak.bank.in"
+      "notes": "Physical Card (min. FD ₹40,000) required for lounge access",
+      "officialImage": "https://stablemoney.in/_app/immutable/assets/suryoday-credit-card-page.C6h_SKO4.webp",
+      "issuerDomain": "suryoday.bank.in",
+      "logoDomains": [
+        "stablemoney.in",
+        "suryoday.bank.in"]
     },
     {
       "id": "hdfc-fd-card",
@@ -109,7 +112,7 @@
       "applyUrl": "https://www.hdfcbank.com/personal/pay/cards/credit-cards",
       "notes": "Benefits depend on final approved card",
       "officialImage": "https://s7ap1.scene7.com/is/image/hdfcbankPWS/moneyback-credit-card?fmt=webp-alpha",
-      "issuerDomain": "hdfcbank.com"
+      "issuerDomain": "hdfc.bank.in"
     },
     {
       "id": "axis-fd-card",
@@ -196,7 +199,11 @@
       "applyUrl": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/tata-neu-plus-hdfc-bank-credit-card",
       "notes": "Co-branded unsecured card, not FD-backed",
       "officialImage": "https://s7ap1.scene7.com/is/image/hdfcbankPWS/c-card?fmt=webp-alpha",
-      "issuerDomain": "hdfcbank.com"
+      "issuerDomain": "hdfc.bank.in",
+      "logoDomains": [
+        "hdfc.bank.in",
+        "tataneu.com"
+      ]
     },
     {
       "id": "axis-flipkart",
@@ -217,7 +224,11 @@
       "imageAlt": "Flipkart Axis card visual",
       "applyUrl": "https://www.axisbank.com/retail/cards/credit-card/flipkart-axis-bank-credit-card",
       "notes": "Co-branded unsecured card, not FD-backed",
-      "issuerDomain": "axis.bank.in"
+      "issuerDomain": "axis.bank.in",
+      "logoDomains": [
+        "axis.bank.in",
+        "flipkart.com"
+      ]
     },
     {
       "id": "icici-amazon-pay",
@@ -239,7 +250,11 @@
       "applyUrl": "https://www.amazon.in/icici-credit-card",
       "notes": "Co-branded unsecured card, not FD-backed",
       "officialImage": "https://images-eu.ssl-images-amazon.com/images/G/31/ShoppingPortal/logo._TTD_.png",
-      "issuerDomain": "icici.bank.in"
+      "issuerDomain": "icici.bank.in",
+      "logoDomains": [
+        "icici.bank.in",
+        "amazon.in"
+      ]
     },
     {
       "id": "sbi-bpcl",
@@ -261,7 +276,37 @@
       "applyUrl": "https://www.sbicard.com/en/personal/credit-cards/travel/bpcl-sbi-card.page",
       "notes": "Co-branded unsecured card, not FD-backed",
       "officialImage": "https://www.sbicard.com/sbi-card-en/assets/media/images/mega-menu/bpcl-mega-menu245x600.jpg",
-      "issuerDomain": "sbicard.com"
+      "issuerDomain": "sbicard.com",
+      "logoDomains": [
+        "sbicard.com",
+        "bharatpetroleum.in"
+      ]
+    },
+    {
+      "id": "utkarsh-super-money",
+      "name": " Utkarsh SFB X super.money superCard",
+      "issuer": "Utkarsh SFB",
+      "cardCategory": "co-branded secured",
+      "partner": "Rupay",
+      "joiningFee": 0,
+      "annualFee": 0,
+      "minFd": 500,
+      "limitPolicy": "Up to 90% of FD Value",
+      "rewardType": "cashback",
+      "rewards": "1% CB on spends (base earn rate) ",
+      "forexMarkup": "3.5%",
+      "loungeAccess": "No",
+      "eligibility": "Issuer eligibility checks",
+      "image": "assets/card-art/placeholder.svg",
+      "imageAlt": "Utkarsh x SUPER.MONEY card visual",
+      "applyUrl": "",
+      "notes": "Co-branded Entry level card",
+      "officialImage": "https://cd9941cc.delivery.rocketcdn.me/wp-content/uploads/2025/03/superCard-Credit-Card.webp",
+      "issuerDomain": "utkarsh.bank.in",
+      "logoDomains": [
+        "utkarsh.bank.in",
+        "super.money"
+      ]
     }
   ],
   "logoDevToken": "pk_e7x4CGgnRcavg-PLzl5rTA"
