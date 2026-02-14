@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SeCured | Compare Secured Credit Cards in India</title>
+    <meta
+      name="description"
+      content="Simple side-by-side comparison for secured credit cards in India."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <header class="hero">
+      <p class="badge">India-Focused • FD-Backed Card Compare</p>
+      <h1>Compare Secured Credit Cards in India</h1>
+      <p class="hero-copy">
+        Pick up to 3 cards and compare fees, FD requirement, limits, rewards,
+        and key features in one view.
+      </p>
+      <p id="last-updated" class="muted"></p>
+    </header>
+
+    <main class="layout">
+      <aside class="panel filters">
+        <h2>Filters</h2>
+
+        <label>
+          Search
+          <input id="search" type="text" placeholder="Bank or card name" />
+        </label>
+
+        <label>
+          Max annual fee (INR)
+          <input id="max-fee" type="number" min="0" step="100" />
+        </label>
+
+        <label>
+          Max minimum FD (INR)
+          <input id="max-fd" type="number" min="0" step="1000" />
+        </label>
+
+        <label>
+          Card category
+          <select id="card-category">
+            <option value="">All</option>
+            <option value="secured">Secured (FD-backed)</option>
+            <option value="co-branded">Co-branded</option>
+          </select>
+        </label>
+
+        <label>
+          Reward type
+          <select id="reward-type">
+            <option value="">All</option>
+            <option value="cashback">Cashback</option>
+            <option value="points">Points</option>
+            <option value="mixed">Mixed</option>
+          </select>
+        </label>
+
+        <button id="clear-filters" type="button" class="secondary">
+          Clear filters
+        </button>
+      </aside>
+
+      <section class="panel">
+        <div class="section-head">
+          <h2>Cards</h2>
+          <p class="muted" id="results-count"></p>
+        </div>
+        <div id="card-list" class="card-list"></div>
+      </section>
+    </main>
+
+    <section class="panel compare">
+      <div class="section-head">
+        <h2>Comparison</h2>
+        <p class="muted">Select up to 3 cards</p>
+      </div>
+      <div id="compare-table-wrap" class="compare-wrap"></div>
+    </section>
+
+    <dialog id="card-modal" class="card-modal">
+      <article class="card-modal-panel">
+        <button
+          id="close-modal"
+          class="card-modal-close"
+          type="button"
+          aria-label="Close details"
+        >
+          Close
+        </button>
+        <div id="card-modal-content"></div>
+      </article>
+    </dialog>
+
+    <footer class="footer muted">
+      <p>
+        Data is indicative and may change. Verify terms directly on issuer
+        websites before applying.
+      </p>
+      <p class="affiliate-note">
+        Affiliate disclosure: apply links may become affiliate links in future.
+        This may earn us a commission at no extra cost to you.
+      </p>
+    </footer>
+
+    <script src="assets/app.js" defer></script>
+  </body>
+</html>

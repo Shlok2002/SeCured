@@ -1,0 +1,390 @@
+:root {
+  --bg: #f5f3ec;
+  --paper: #fffcf6;
+  --ink: #132a1f;
+  --muted: #5b6d62;
+  --accent: #0f766e;
+  --accent-2: #e67e22;
+  --line: #d9d3c7;
+  --shadow: 0 12px 30px rgba(19, 42, 31, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 10% 10%, #fef4d8 0%, transparent 40%),
+    radial-gradient(circle at 90% 20%, #dff5ee 0%, transparent 45%), var(--bg);
+  min-height: 100vh;
+  padding: 2.25rem 1rem 2.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Sora", sans-serif;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.bg-shape {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(18px);
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+.bg-shape-1 {
+  top: -70px;
+  right: -70px;
+  width: 220px;
+  height: 220px;
+  background: #f6ba5e;
+}
+
+.bg-shape-2 {
+  bottom: -80px;
+  left: -50px;
+  width: 240px;
+  height: 240px;
+  background: #7ecbb9;
+}
+
+.hero,
+.panel,
+.footer {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 1rem 0 1.4rem;
+  animation: rise-in 450ms ease-out both;
+}
+
+.badge {
+  display: inline-block;
+  background: #fff5de;
+  color: #7e5315;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid #f0d7a7;
+  font-size: 0.83rem;
+  margin-bottom: 0.9rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+  margin-bottom: 0.6rem;
+}
+
+.hero-copy {
+  max-width: 65ch;
+  color: #2f463b;
+  margin-bottom: 0.55rem;
+}
+
+.layout {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1rem;
+}
+
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: #2b4438;
+  font-size: 0.94rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  background: #fffefb;
+  border: 1px solid #c7c2b8;
+  color: var(--ink);
+  border-radius: 10px;
+  padding: 0.55rem 0.65rem;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #e8e3d8;
+  color: #2f463b;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.card {
+  border: 1px solid #cfc9be;
+  border-radius: 12px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #fffdf8;
+  transition: transform 180ms ease, border-color 180ms ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: #9fbdb2;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #cfc9be;
+}
+
+.issuer-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.issuer-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 4px;
+  border: 1px solid #d8d0c4;
+  background: #fff;
+}
+
+.card h3 {
+  font-size: 1rem;
+}
+
+.small {
+  font-size: 0.82rem;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  background: #e6f3ef;
+  color: #17554f;
+  border: 1px solid #b9ddd4;
+  border-radius: 999px;
+  padding: 0.1rem 0.45rem;
+  font-size: 0.75rem;
+}
+
+.apply-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: var(--accent);
+  color: #f3fffc;
+  border-radius: 8px;
+  padding: 0.4rem 0.65rem;
+  font-size: 0.85rem;
+  transition: filter 180ms ease;
+}
+
+.apply-link:hover {
+  filter: brightness(0.92);
+}
+
+.apply-link.is-disabled {
+  background: #ddd8cd;
+  color: #787266;
+  pointer-events: none;
+}
+
+.select-row {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.select-row label {
+  display: inline;
+  flex-direction: row;
+  gap: 0;
+  font-size: 0.9rem;
+}
+
+.compare {
+  margin-top: 1rem;
+}
+
+.card-modal {
+  border: none;
+  padding: 0;
+  background: transparent;
+  max-width: min(760px, 92vw);
+  width: 100%;
+}
+
+.card-modal::backdrop {
+  background: rgba(8, 19, 15, 0.5);
+}
+
+.card-modal-panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.card-modal-close {
+  margin-left: auto;
+  display: block;
+  background: #eee8dc;
+  color: #2f463b;
+}
+
+.card-modal-head {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.card-modal-image {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #d0c9bc;
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+}
+
+.card-modal-title-block h3 {
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.card-modal-grid {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem 1rem;
+}
+
+.card-modal-actions {
+  margin-top: 1rem;
+}
+
+.compare-wrap {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 700px;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  border-bottom: 1px solid #ddd6ca;
+  padding: 0.65rem;
+  vertical-align: top;
+}
+
+th {
+  background: #f5efe4;
+  font-family: "Sora", sans-serif;
+}
+
+.footer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.affiliate-note {
+  margin-top: 0.45rem;
+}
+
+@keyframes rise-in {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 920px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .card-modal-head {
+    grid-template-columns: 1fr;
+  }
+
+  .card-modal-grid {
+    grid-template-columns: 1fr;
+  }
+}
