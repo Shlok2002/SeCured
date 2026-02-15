@@ -44,6 +44,18 @@ const compareFields = [
   ["Notes", "notes"],
 ];
 
+const issuerAccentMap = {
+  "IDFC FIRST Bank": "#2f8f83",
+  "SBI Card": "#2b6fc0",
+  "ICICI Bank": "#de6e2f",
+  "Kotak Mahindra Bank": "#1b8f89",
+  "HDFC Bank": "#3357a2",
+  "Axis Bank": "#7a2a50",
+  "YES Bank": "#366488",
+  "Federal Bank": "#3c9960",
+  "Utkarsh Small Finance Bank": "#945d2f",
+};
+
 function money(value) {
   if (typeof value !== "number") return value;
   return fmtInr.format(value);
@@ -89,6 +101,31 @@ function renderCardLogos(card) {
     .map(
       (logo) =>
         `<img class="issuer-logo" src="${logo.url}" alt="${logo.domain} logo" loading="lazy" onerror="this.onerror=null;this.style.display='none';" />`
+    )
+    .join("");
+}
+
+function getIssuerAccent(card) {
+  return issuerAccentMap[card.issuer] || "#6ca99b";
+}
+
+function renderLoadingCards(count = 6) {
+  els.resultsCount.textContent = "Loading...";
+  els.cardList.innerHTML = new Array(count)
+    .fill(0)
+    .map(
+      () => `
+      <article class="card skeleton">
+        <div class="skeleton-block skeleton-image"></div>
+        <div class="skeleton-block skeleton-title"></div>
+        <div class="skeleton-block skeleton-line"></div>
+        <div class="skeleton-chip-row">
+          <div class="skeleton-block skeleton-chip"></div>
+          <div class="skeleton-block skeleton-chip"></div>
+          <div class="skeleton-block skeleton-chip"></div>
+        </div>
+      </article>
+    `
     )
     .join("");
 }
@@ -140,7 +177,9 @@ function renderCards() {
       const disable =
         !selected && state.selected.size >= MAX_COMPARE ? "disabled" : "";
       return `
-      <article class="card" data-card-id="${card.id}" tabindex="0" role="button" aria-label="View details for ${card.name}">
+      <article class="card" style="--card-accent: ${getIssuerAccent(
+        card
+      )}" data-card-id="${card.id}" tabindex="0" role="button" aria-label="View details for ${card.name}">
         <img
           class="card-image"
           src="${getCardImage(card)}"
@@ -344,6 +383,7 @@ function attachModalHandlers() {
 
 async function init() {
   try {
+    renderLoadingCards();
     const response = await fetch("./data/cards.json");
     if (!response.ok) throw new Error("Failed to load card data");
 

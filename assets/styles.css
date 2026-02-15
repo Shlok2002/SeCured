@@ -1,12 +1,13 @@
 :root {
-  --bg: #f5f3ec;
-  --paper: #fffcf6;
-  --ink: #132a1f;
-  --muted: #5b6d62;
+  --bg: #f6f2e8;
+  --paper: #fffdf8;
+  --ink: #13291f;
+  --muted: #5d6f64;
   --accent: #0f766e;
   --accent-2: #e67e22;
-  --line: #d9d3c7;
-  --shadow: 0 12px 30px rgba(19, 42, 31, 0.08);
+  --line: #ddd5c7;
+  --shadow: 0 14px 36px rgba(19, 42, 31, 0.1);
+  --shadow-soft: 0 8px 20px rgba(19, 42, 31, 0.06);
 }
 
 * {
@@ -17,8 +18,9 @@ body {
   margin: 0;
   font-family: "Space Grotesk", sans-serif;
   color: var(--ink);
-  background: radial-gradient(circle at 10% 10%, #fef4d8 0%, transparent 40%),
-    radial-gradient(circle at 90% 20%, #dff5ee 0%, transparent 45%), var(--bg);
+  background: radial-gradient(circle at 10% 10%, #fef4d8 0%, transparent 42%),
+    radial-gradient(circle at 90% 20%, #dff5ee 0%, transparent 46%),
+    linear-gradient(180deg, #f8f4ea 0%, #f4efe3 100%);
   min-height: 100vh;
   padding: 2.25rem 1rem 2.5rem;
 }
@@ -148,6 +150,14 @@ select {
   color: var(--ink);
   border-radius: 10px;
   padding: 0.55rem 0.65rem;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #88b8ad;
+  box-shadow: 0 0 0 3px rgba(28, 112, 102, 0.16);
 }
 
 button {
@@ -155,11 +165,18 @@ button {
   border-radius: 10px;
   padding: 0.6rem 0.8rem;
   cursor: pointer;
+  transition: transform 150ms ease, filter 150ms ease;
 }
 
 button.secondary {
   background: #e8e3d8;
   color: #2f463b;
+  border: 1px solid #d6d0c2;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.98);
 }
 
 .card-list {
@@ -176,13 +193,17 @@ button.secondary {
   flex-direction: column;
   gap: 0.5rem;
   background: #fffdf8;
-  transition: transform 180ms ease, border-color 180ms ease;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
   cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  border-top: 4px solid var(--card-accent, #9fbdb2);
+  animation: card-in 320ms ease both;
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  border-color: #9fbdb2;
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--card-accent, #9fbdb2) 55%, #bfb8aa);
+  box-shadow: 0 12px 28px rgba(19, 42, 31, 0.12);
 }
 
 .card-image {
@@ -223,9 +244,9 @@ button.secondary {
 }
 
 .chip {
-  background: #e6f3ef;
-  color: #17554f;
-  border: 1px solid #b9ddd4;
+  background: color-mix(in srgb, var(--card-accent, #5fa99a) 18%, #f4faf8);
+  color: #17443f;
+  border: 1px solid color-mix(in srgb, var(--card-accent, #5fa99a) 34%, #cce2dc);
   border-radius: 999px;
   padding: 0.1rem 0.45rem;
   font-size: 0.75rem;
@@ -237,16 +258,17 @@ button.secondary {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  background: var(--accent);
+  background: linear-gradient(120deg, #0f766e 0%, #159a8f 100%);
   color: #f3fffc;
   border-radius: 8px;
   padding: 0.4rem 0.65rem;
   font-size: 0.85rem;
-  transition: filter 180ms ease;
+  transition: filter 180ms ease, transform 180ms ease;
 }
 
 .apply-link:hover {
   filter: brightness(0.92);
+  transform: translateY(-1px);
 }
 
 .apply-link.is-disabled {
@@ -340,6 +362,8 @@ table {
   border-collapse: collapse;
   min-width: 700px;
   width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 th,
@@ -353,6 +377,10 @@ td {
 th {
   background: #f5efe4;
   font-family: "Sora", sans-serif;
+}
+
+tbody tr:nth-child(even) td {
+  background: #fff9ee;
 }
 
 .footer {
@@ -372,6 +400,64 @@ th {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card.skeleton {
+  pointer-events: none;
+  border-top-color: #d7d0c1;
+}
+
+.skeleton-block {
+  border-radius: 8px;
+  background: linear-gradient(100deg, #ece5d8 20%, #f8f3e9 40%, #ece5d8 60%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+
+.skeleton-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+}
+
+.skeleton-title {
+  width: 72%;
+  height: 18px;
+}
+
+.skeleton-line {
+  width: 55%;
+  height: 14px;
+}
+
+.skeleton-chip-row {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.skeleton-chip {
+  width: 30%;
+  height: 20px;
+  border-radius: 999px;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
   }
 }
 
